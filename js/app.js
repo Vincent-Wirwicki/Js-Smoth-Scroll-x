@@ -57,6 +57,7 @@ const raf = () => {
 
 const app = () => {
   addImagesToDom();
+  initAnimation();
   addEvents();
   raf();
 };
