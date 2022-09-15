@@ -11,8 +11,6 @@ let target = 0;
 let current = 0;
 let direction;
 let ease = 0.075;
-let itemsHeight =
-  container.getBoundingClientRect().height / (images.length / 2);
 
 const lerp = (start, end, t) => start * (1 - t) + end * t;
 
