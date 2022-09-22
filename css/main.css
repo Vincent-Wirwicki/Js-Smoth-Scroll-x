@@ -11,7 +11,6 @@
 
 body {
   font-family: "s sans serif";
-  /* overflow: hidden; */
   background-color: #262626;
   color: #fff;
 }
@@ -31,7 +30,7 @@ ul {
   display: flex;
   text-align: center;
   list-style: none;
-  width: fit-content;
+  width: 150px;
 }
 
 li {
@@ -43,6 +42,9 @@ li:last-child {
 }
 
 #container {
+  position: fixed;
+  z-index: 10;
+
   width: 100%;
   height: 100vh;
 }
@@ -51,7 +53,7 @@ li:last-child {
   position: fixed;
   top: 50%;
   left: 50%;
-  z-index: 5;
+  z-index: 4;
   transform: translate(-50%, -50%);
   width: 3rem;
   height: 3rem;
@@ -63,7 +65,7 @@ li:last-child {
 .cross__line {
   width: 100%;
   height: 2px;
-  background-color: #fff;
+  background-color: red;
 }
 
 .cross__line:last-child {
@@ -72,49 +74,48 @@ li:last-child {
 
 .scroll {
   position: fixed;
-  top: 25vh;
+  top: 30vh;
   left: 0;
-  width: 2500px;
+  z-index: 3;
+  width: 100%;
   height: 50vh;
   overflow: hidden;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.scroll__wrap {
+.scroll__wrap__first  {
+  position: relative;
+  left: 40%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   height: 100%;
-  width: 100%;
+  width: 2000px;
   will-change: transform;
 }
 
 .scroll__wrap__item {
-  width: 300px;
+  width: 400px;
   height: 100%;
-  padding: 0.5rem;
   overflow: hidden;
-  padding: 1rem;
-  background-color: #fff;
+  margin: 0 60px;
 }
 
 .scroll__wrap__img {
-  height: 100%;
   width: 100%;
-  background-size: cover;
-  background-position: center;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
+
 
 .progress {
   position: fixed;
   top: 10%;
   left: 5%;
   width: 90%;
-  height: 10vh;
+  height: 30px;
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
   align-items: baseline;
 }
@@ -128,13 +129,12 @@ li:last-child {
 .progress__bar__inner {
   height: 100%;
   background-color: #f2f2f2;
-  transition: 300ms width ease-out;
+  transition:width 300ms ease-out;
   will-change: width;
 }
 
 .progress__bar__txt {
-  margin-top: 0;
-  padding: 0;
+  width: 35px;
   font-size: 0.8rem;
   transition: 300ms width ease-out;
 }
@@ -148,21 +148,32 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0.5rem;
+}
+
+.counter{
+  width: 100px;
 }
 
 span {
   display: inline-block;
   margin: 0.8rem;
-}
+  height: 20px;
+  width: 10px;
+  text-align: center;
 
-span:nth-of-type(2) {
-  width: 20px;
 }
 
 .counter {
   width: 100px;
-  height: auto;
+  height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+
+.counter__wrap{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
