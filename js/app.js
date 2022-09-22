@@ -3,8 +3,6 @@ const scrollWrapFirst = document.querySelector(".scroll__wrap__first");
 const progressBar = document.querySelector(".progress__bar__inner");
 const progressBarTxt = document.querySelector(".progress__bar__txt");
 const images = [...document.querySelectorAll(".scroll__wrap__img")];
-const titles = ["Architecture", "Sport", "Nature", "Street"];
-const counter__wrap = document.querySelector(".counter__wrap");
 
 let current = 0;
 let target = 0;
@@ -12,17 +10,6 @@ let ease = 0.075;
 let scrollProgress = 0;
 
 const lerp = (start, end, t) => start * (1 - t) + end * t;
-
-const createSpanCounterTxt = () => {
-  const maxItemsTxt = document.querySelector(".counter__max__items");
-  maxItemsTxt.innerText = images.length;
-  for (let i = 0; i < images.length; i++) {
-    const span = document.createElement("span");
-    span.classList.add("counter__pos");
-    span.innerText = i + 1;
-    counter__wrap.appendChild(span);
-  }
-};
 
 const initAnimation = () => {
   document.body.style.height = `${
@@ -65,7 +52,6 @@ const raf = () => {
 };
 
 const app = () => {
-  createSpanCounterTxt();
   initAnimation();
   addEvents();
   raf();
